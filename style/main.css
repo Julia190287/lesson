@@ -1,0 +1,151 @@
+table{
+    border:1px solid black;
+    border-collapse: collapse;
+}
+td, th {
+    border:1px solid black;
+    padding: 4px 8px;
+}
+th{
+    background-color: antiquewhite;
+}
+
+header nav{
+display: flex;
+justify-content: flex-end;
+gap:30px;
+width: 1200px;
+margin:0 auto;
+}
+.menu{
+display: flex;
+gap:16px;
+}
+a[href= "./РѕР±Рѕ РјРЅРµ"]{
+    color: blueviolet;
+}
+
+.clearfix {
+zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+content: "";
+display: table;
+}
+.clearfix:after {
+clear: both;
+}
+
+.product{
+    width: 270px;
+    color: rgb(156, 96, 6);
+    display: flex;
+flex-direction: column;
+justify-content: space-between;
+background: #fff;
+padding: 10px;
+border-radius: 10px;
+order:2;
+}
+.product_image img{
+    width: 100%;
+}
+
+.product_title{
+    font-size: 24px;
+    margin: 10px;
+}
+
+.product_bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.product_word{
+    color: rgb(3, 21, 108);
+}
+
+.product_button{
+    background: rgb(225, 58, 86);
+    color: rgb(105, 61, 7);
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 10px;
+}
+.catalog{
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+*{
+box-sizing: border-box;
+}
+.layout{
+    width: 1200px;
+    margin: 0 auto;
+}
+.logo{
+    display: block;
+}
+.menu_link{
+    flex-grow:1;
+    border:1px solid rgb(111, 239, 241);
+}
+.menu_link_top{
+    flex-grow: 2;
+}
+
+@media screen and (orientation:landscape){
+    body{
+        background-color: rgb(238, 161, 161);
+    }
+}
+@media print and (min-resolution:300dpi){
+    body{
+        display: block;
+    }
+}
+@media screen and (max-width:1023px){
+    .layout{
+        width: 100%;
+    }
+    .product{
+        width: calc(50% - 10px);
+    }
+    .catalog {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .layout{
+        width: 100%;
+        position: relative;
+    }
+    .product{
+        width: 100%;
+    }
+    .menu{
+        position: absolute;
+        width: 100%;
+        left:0;
+        top:100%;
+        background-color: #fff;
+        height: auto;
+    }
+    .menu_mobile{
+        display: block;
+    }
+    .menu_cont{
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+    .sample{
+        width: 100%;
+    }
+}
+    
