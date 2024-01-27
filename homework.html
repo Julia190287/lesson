@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework</title>
+</head>
+<body>
+<div id="element">
+    А знаешь, всё ещё будет!
+    Южный ветер еще подует,
+    и весну еще наколдует,
+    и память перелистает,
+    и встретиться нас заставит,
+    и еще меня на рассвете
+    губы твои разбудят.
+    Понимаешь, все еще будет!
+    В сто концов убегают рельсы,
+    самолеты уходят в рейсы,
+    корабли снимаются с якоря…
+    Если б помнили это люди,
+    чаще думали бы о чуде,
+    реже бы люди плакали.
+    Счастье — что онo? Та же птица:
+    упустишь — и не поймаешь.
+    А в клетке ему томиться
+    тоже ведь не годиться,
+    трудно с ним, понимаешь?
+    Я его не запру безжалостно,
+    крыльев не искалечу.
+    Улетаешь?
+    Лети, пожалуйста…
+    Знаешь, как отпразднуем
+    Встречу!
+  </div>
+  <style>
+     html, body {
+      height: 100%;
+    }
+    body {
+      margin: 0;
+    }
+
+
+    #element {
+      width: 300px;
+  
+      height: 200px;
+  
+      border: 25px solid #E8C48F; 
+  
+      padding: 20px;             
+  
+      overflow: auto;           
+    }
+  </style>
+          <button class="btn" value="увеличить блок" onclick="element">Расширить текст</button>
+          <div></div>
+          <script>
+                let element = $('element'), baseHeight = element.height();
+                $('button').click(function() {
+                  element.animate({
+                    height: (element.height() == baseHeight ? '100%' : baseHeight)
+                  });
+                });
+              </script>
+            
+</body>
+</html>
