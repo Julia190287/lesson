@@ -1,41 +1,42 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Value</title>
     <head>
-        <meta charset="utf-8">
-        <title>Калькулятор</title>
-    </head>
-    <body>
+        <title>Display Value</title>
+    <script>
+        let A = "Значение переменной А";
+        function displayValue () {
+            const displayDiv = document.getElementById ("display");
+            displayDiv.textContent = A;
+            
+        }
+    </script>
+</head>
+<body>
+    <button onclick="displayValue()">Показать значение А</button>
+    <div id="display"></div>
+</body>
+<body>
+    <input type="number" id="inputNumber1" placeholder="Введите первое число">
+    <input type="number" id="inputNumber2" placeholder="Введите второе число">
+    <br><br>
+    <button onclick="calculate('+')">+</button>
+    <button onclick="calculate('-')">-</button>
+    <button onclick="calculate('*')">*</button>
+    <button onclick="calculate('/')">/</button>
+    <br><br>
+    <div>Результат: <span id="result"></span></div>
 
-        <input id="num1" />
-    
-
-        <div id="operator_btns">
-          <button id="plus" onclick="op='+'">+</button>
-          <button id="minus" onclick="op='-'">-</button>
-          <button id="times" onclick="op='*'">x</button>
-          <button id="divide" onclick="op='/'">:</button>
-        </div>
-    
-
-        <input id="num2" />
-        <br>
-  
-        <button >Посчитать</button>
-  
-        <p id="result"></p>
-    
-        <script>
-
-          let op; 
-
-          function func() {
-
+    <script>
+        function calculate(operation) {
+            const num1 = parseFloat(document.getElementById('inputNumber1').value);
+            const num2 = parseFloat(document.getElementById('inputNumber2').value);
             let result;
 
-            let num1 = Number(document.getElementById("num1").value);
-            let num2 = Number(document.getElementById("num2").value);
-
-            switch (op) {
+            switch (operation) {
               case '+':
                 result = num1 + num2;
                 break;
@@ -46,13 +47,21 @@
                 result = num1 * num2;
                 break;
               case '/':
-                result = num1 / num2;
+                result = num2 !== 0 ? num1 / num2: "Ошибка деления на ноль";
                 break;
+                default:
+                    result = "Неизвестная операция";
             }
-   
-            document.getElementById("result").innerHTML = result;
+
+            document.getElementById('result').textContent = result;
           }
         </script>
-    
     </body>
+    <body>
+        <h1 class="one">Задание</h1>
+<button class="btn">кнопка</button>
+<script src="1.js"></script>
+
+</body>
+
 </html>
