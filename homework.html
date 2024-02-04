@@ -57,20 +57,29 @@
   </style>
           <button class="btn" value="увеличить блок" onclick="element">Расширить текст</button>
           <div></div>
-          <script>
-                let element = $('element'), baseHeight = element.height();
-                $('button').click(function() {
-                  element.animate({
-                    height: (element.height() == baseHeight ? '100%' : baseHeight)
-                  });
-                });
-              </script>
+        
               
               <h1> Задание к уроку 9</h1>
               <button class="massiv">Массив 1</button>
               <div class="block"></div>
+            
+              <h1>Задание 2 к уроку 9</h1>
+              <button class="chet-massiv">Четные цифры</button>
+              <div class="stop"></div>
               <script>
-                let newButton = document.querySelector('.massiv');
+
+//1
+let elem = document.querySelector('#element')
+              let btn = document.querySelector ('.btn')
+            btn.onclick = function () {
+              console.log(elem.style.color);
+              elem.style.height = '100%'
+              
+            }
+
+
+//2
+let newButton = document.querySelector('.massiv');
 let block = document.querySelector('.block');
                 let arr = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100];
         
@@ -79,22 +88,23 @@ let block = document.querySelector('.block');
     block.innerHTML = arr[currentPosition+4] + "<br />"
   };
 })();
- 
-              </script>
-              <h1>Задание 2 к уроку 9</h1>
-              <button class="chet-massiv">Четные цифры</button>
-              <div class="stop"></div>
-              <script>
-                let newButton = document.querySelector('.chet-massiv');
-let stop = document.querySelector('.stop');
-                let ab = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-                for (var i = 0; i < ab.length; i++)
-        
-                newButton.onclick = ((currentPosition = 0) => () => {
-                    if ((ab[i] % 2) === 0) {
-    stop.innerHTML = a[currentPosition] + "<br />"
-  };
-})();
+
+
+
+
+                // 3
+                let ab = [1,2,3,4,5,6,7,8,9,10];
+                let stop = document.querySelector('.stop');
+                let chetMassivButton = document.querySelector('.chet-massiv');
+chetMassivButton.onclick = function() {
+  for (let i = 0; i < ab.length; i++) {
+    if (ab[i] % 2 == 0) {
+      stop.innerHTML += ab[i];
+    }
+  }
+};
+
+                </script>
 
 </body>
 </html>

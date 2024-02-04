@@ -96,3 +96,19 @@
 //let user = null
 //let word = "привет"
 //console.log(digit ?? user ?? word ?? "аноним"); //Задание 3
+fetch("https://randomuser.me/api")
+.then(function(resp) {return resp.json()})
+.then(function (data){
+console.log(data);
+document.querySelector('.out').innerHTML += `<h1>${data.results[0].name.first}</h1>`
+
+//document.querySelector('.out').innerHTML += `<h1>${data.results[0].name.first}</h1>`
+document.querySelector('.out').innerHTML += `<h2>${data.results[0].name.last}</h2> <br>`
+document.querySelector('.out').innerHTML += `<img src = ${data.results[0].picture.large}>`
+document.querySelector('.out').innerHTML += `<h1>${data.results[0].dob.age}</h1>`
+document.querySelector('.out').innerHTML += `<h1>${data.results[0].email}</h1>`
+document.querySelector('.out').innerHTML += `<h1>${data.results[0].phone}</h1>`
+
+
+
+})
